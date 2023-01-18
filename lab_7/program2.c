@@ -39,7 +39,7 @@ int main() {
     // Calculate waiting time and turnaround time
     for (i = 0; i < n; i++) {
         current_time += p[i].burst_time;
-        p[i].waiting_time = current_time - p[i].arrival_time;
+        p[i].waiting_time = current_time - p[i].arrival_time-p[i].burst_time;
         p[i].turnaround_time = current_time - p[i].arrival_time;
     }
 

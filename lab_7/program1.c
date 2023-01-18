@@ -46,10 +46,15 @@ int main() {
     }
 
     // Print the schedule
+    float avg_waiting = 0,sum_waiting = 0;
+    float avg_turnaround = 0,sum_turnaround = 0;
     printf("Process ID\tBurst Time\tArrival Time\tWaiting Time\tTurnaround Time\n");
     for (i = 0; i < n; i++) {
         printf("%d\t\t%d\t\t%d\t\t%d\t\t%d\n", p[i].pid, p[i].burst_time, p[i].arrival_time, p[i].waiting_time, p[i].turnaround_time);
+        sum_waiting += p[i].waiting_time;
+        sum_turnaround += p[i].turnaround_time;
     }
-
+    printf("\nAverage Waiting time = %.2f",(sum_waiting/n));
+    printf("\nAverage Turnaround time = %.2f\n",(sum_turnaround/n));
     return 0;
 }
