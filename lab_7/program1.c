@@ -1,3 +1,4 @@
+//A program in C for Scheduling using Round Robin
 #include <stdio.h>
 
 struct Process {
@@ -45,7 +46,7 @@ int main() {
         }
     }
 
-    // Print the schedule
+
     float avg_waiting = 0,sum_waiting = 0;
     float avg_turnaround = 0,sum_turnaround = 0;
     printf("Process ID\tBurst Time\tArrival Time\tWaiting Time\tTurnaround Time\n");
