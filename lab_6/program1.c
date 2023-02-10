@@ -18,21 +18,10 @@ int main() {
     for (i = 0; i < n; i++) {
         printf("Enter the burst time for process %d: ", i+1);
         scanf("%d", &p[i].burst_time);
-        printf("Enter the arrival time for process %d: ", i+1);
-        scanf("%d",&p[i].arrival_time);
         p[i].pid = i+1;
     }
 
 
-    for (i = 0; i < n; i++) {
-        for (j = 0; j < n-i-1; j++) {
-            if (p[j].arrival_time > p[j+1].arrival_time) {
-                struct Process temp = p[j];
-                p[j] = p[j+1];
-                p[j+1] = temp;
-            }
-        }
-    }
 
 
     p[0].waiting_time = 0;
@@ -41,7 +30,7 @@ int main() {
     float total_turnaround_time =0,avg_turnaround_time ;
     for (i = 1; i < n; i++) {
         p[i].waiting_time = p[i-1].waiting_time + p[i-1].burst_time;
-        p[i].turnaround_time = p[i].waiting_time + p[i].burst_time-p[i-1].arrival_time;
+        p[i].turnaround_time = p[i].waiting_time + p[i].burst_time;
         total_waiting += p[i].waiting_time;
         total_turnaround_time += p[i].turnaround_time;
     }

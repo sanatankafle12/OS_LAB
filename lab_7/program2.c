@@ -36,6 +36,7 @@ int main() {
             }
         }
     }
+    
     int current_time = 0;
     float avg_waiting = 0,sum_waiting = 0;
     float avg_turnaround = 0,sum_turnaround = 0;
